@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{2725C38D-C77E-4657-93FE-15EC6D8721CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7C490DAA-5767-4174-A315-40FC7E76F739}"
+	ProjectSection(SolutionItems) = preProject
+		..\postman_collection.json = ..\postman_collection.json
+		ReadMe.md = ReadMe.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2725C38D-C77E-4657-93FE-15EC6D8721CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2725C38D-C77E-4657-93FE-15EC6D8721CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2725C38D-C77E-4657-93FE-15EC6D8721CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2725C38D-C77E-4657-93FE-15EC6D8721CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53AEAA6F-DED3-4769-A581-8528BCE667B4}
+	EndGlobalSection
+EndGlobal

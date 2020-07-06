@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "3a56e1d2-12e0-4f76-aa75-b2c1d3238c20",
+		"name": "xForms",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api/forms/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:60900/api/forms/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60900",
+					"path": [
+						"api",
+						"forms",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/forms/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"Name B\",\r\n    \"mobile\": \"0400000002\",\r\n    \"email\": \"b@email.com\",\r\n    \"address\": \"Address B\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60900/api/forms/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60900",
+					"path": [
+						"api",
+						"forms",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/forms/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"Name A\",\r\n    \"mobile\": \"0400000001\",\r\n    \"email\": \"a@email.com\",\r\n    \"address\": \"Address A2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:60900/api/forms/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60900",
+					"path": [
+						"api",
+						"forms",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/forms/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:60900/api/forms/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60900",
+					"path": [
+						"api",
+						"forms",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
