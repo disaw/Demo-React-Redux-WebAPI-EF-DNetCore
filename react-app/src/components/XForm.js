@@ -1,3 +1,5 @@
+import React from "react";
+
 const { default: Forms } = require("./FormList");
 
 const XForm = (props) => {

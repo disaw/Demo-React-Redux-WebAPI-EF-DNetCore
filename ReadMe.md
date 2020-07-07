@@ -7,6 +7,7 @@ Redux
 react-redux
 redux-thunk
 react hooks
+material-ui
 
 EF:
 PM>Add-Migration "InitialCreate"
@@ -27,16 +28,20 @@ Component -> dispatch(action) -> reducer -> store -> component
 >npm i -s redux react-redux redux-thunk
 
 src -> 
+
 	actions ->
 		store.js
 		xForm.js
 		api.js
+
 	components ->
 		XForm.js
 		FormList.js
+
 	reducers ->
 		xForm.js
 		index.js
+
 
 Install extention: 'ES7 React/Redux/GraphQL/React-Native snippets'
 sfc
@@ -46,5 +51,7 @@ sfc
 Install Nuget: for Cors
 
 Install redux devtools browser extension
+
+>npm i -s @material-ui/core @material-ui/icons
 
 
