@@ -21,17 +21,17 @@ const FormList = ({classes,...props}) => {
     //const [x, setX]= useState(0);
     //setX(5);
 
-    useEffect(()=>{
+    useEffect(() => {
         props.fetchAllFormList()
     }, [])//componentDidMount
 
     return (
         <Paper className={classes.paper} elevation={3}> 
             <Grid container>
-                <Grid item xs={6}>
+                <Grid item xs={4}>
                     <XForm/>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={8}>
                     <TableContainer>
                         <Table>
                             <TableHead className={classes.root}>
