@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Grid, TextField, withStyles, Button } from "@material-ui/core";
 import useForm from "./useForm"
+import { connect }  from "react-redux";
+import * as actions from "../actions/xForm"
 
 const styles = theme => ({
     root: {
@@ -62,7 +64,8 @@ const XForm = ({classes, ...props}) => {
         //console.log(values)
         if(validate())
         {
-            window.alert('Validation succeeded!')
+            //window.alert('Validation succeeded!')
+            props.createXForm(values, () => { window.alert('Inserted.')})
         }
     }
  
@@ -111,4 +114,13 @@ const XForm = ({classes, ...props}) => {
     );
 }
 
-export default withStyles(styles) (XForm);
+const mapStateToProps = state => ({
+    xFormList: state.xForm.list
+})
+
+const mapActionToProps = {
+    createXForm: actions.create,
+    updateXForm: actions.update
+}
+
+export default connect(mapStateToProps, mapActionToProps) (withStyles(styles) (XForm));

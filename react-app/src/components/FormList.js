@@ -64,10 +64,10 @@ const FormList = ({classes,...props}) => {
 }
 
 const mapStateToProps = state => ({
-        xFormList: state.xForm.list
+    xFormList: state.xForm.list
 })
 
-const mapActionToProps ={
+const mapActionToProps = {
     fetchAllFormList: actions.fetchAll
 }
 
