@@ -3,6 +3,7 @@ import { Grid, TextField, withStyles, Button } from "@material-ui/core";
 import useForm from "./useForm"
 import { connect }  from "react-redux";
 import * as actions from "../actions/xForm"
+import { useToasts } from "react-toast-notifications"
 
 const styles = theme => ({
     root: {
@@ -28,6 +29,8 @@ const initialFieldValues = {
 }
 
 const XForm = ({classes, ...props}) => {
+
+    const { addToast } = useToasts()
 
     //validate()
     //validate({fullName: 'Sam'})
@@ -66,13 +69,16 @@ const XForm = ({classes, ...props}) => {
         if(validate())
         {
             //window.alert('Validation succeeded!')
-            if(props.currentId == 0)
-                props.createXForm(values, () => { window.alert('Inserted.')})
-            else
-                props.updateXForm(props.currentId, values, () => { window.alert('updated.')})
-        }
+            const onSuccess = () => {
+                resetForm()
+                addToast("Submitted successfully", { appearance: 'success'})
+            }
 
-        resetForm()
+            if(props.currentId == 0)
+                props.createXForm(values, onSuccess)
+            else
+                props.updateXForm(props.currentId, values, onSuccess)
+        }        
     }
 
     useEffect( () => {

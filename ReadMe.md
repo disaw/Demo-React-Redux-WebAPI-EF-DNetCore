@@ -55,4 +55,6 @@ Install redux devtools browser extension
 
 >npm i -s @material-ui/core @material-ui/icons
 
+>npm i -s react-toast-notifications
+
 
