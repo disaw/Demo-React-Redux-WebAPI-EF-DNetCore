@@ -32,7 +32,7 @@ const XForm = ({classes, ...props}) => {
     //validate()
     //validate({fullName: 'Sam'})
     const validate = (fieldValues = values) => {
-        let temp = {}
+        let temp = {...errors}
 
         if('fullName' in fieldValues) //Realtime field validation
             temp.fullName = fieldValues.fullName ? "" : "This field is required."
@@ -56,8 +56,9 @@ const XForm = ({classes, ...props}) => {
         setValues,
         errors,
         setErrors,
-        handleInputChange
-    } = useForm(initialFieldValues, validate)
+        handleInputChange,
+        resetForm
+    } = useForm(initialFieldValues, validate, props.setCurrentId)
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -70,13 +71,17 @@ const XForm = ({classes, ...props}) => {
             else
                 props.updateXForm(props.currentId, values, () => { window.alert('updated.')})
         }
+
+        resetForm()
     }
 
     useEffect( () => {
-        if(props.currentId != 0)
+        if(props.currentId != 0) {
             setValues({
                 ...props.xFormList.find(x => x.id == props.currentId)
             })
+            setErrors({})
+        }
     }, [props.currentId])
  
     return (
@@ -116,7 +121,8 @@ const XForm = ({classes, ...props}) => {
                     <div>
                         <Button variant="contained" color="primary" 
                             type="submit" className={classes.smMargin}>Submit</Button>
-                        <Button variant="contained" className={classes.smMargin}>Reset</Button>
+                        <Button variant="contained" className={classes.smMargin}
+                            onClick={resetForm} >Reset</Button>
                     </div>
                 </Grid>
             </Grid>
